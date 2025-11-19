@@ -1,0 +1,36 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+public class ShoppingServlet extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+
+        // Fetch existing cart
+        ArrayList<String[]> cart = (ArrayList<String[]>) session.getAttribute("cart");
+
+        if (cart == null) {
+            cart = new ArrayList<>();
+        }
+
+        // Read product data from form
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String price = request.getParameter("price");
+
+        // Store values in array
+        String[] product = { id, name, price };
+
+        cart.add(product);
+
+        // Put cart back into session
+        session.setAttribute("cart", cart);
+
+        // Redirect to cart page
+        response.sendRedirect("cart.jsp");
+    }
+}

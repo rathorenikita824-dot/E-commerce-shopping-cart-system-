@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Shopping Cart</title>
+</head>
+<body>
+
+<h1>Welcome to My Shopping Store</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Price (₹)</th>
+        <th>Add to Cart</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>Shoes</td>
+        <td>1200</td>
+        <td>
+            <form action="ShoppingServlet" method="post">
+                <input type="hidden" name="id" value="1">
+                <input type="hidden" name="name" value="Shoes">
+                <input type="hidden" name="price" value="1200">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>T-shirt</td>
+        <td>500</td>
+        <td>
+            <form action="ShoppingServlet" method="post">
+                <input type="hidden" name="id" value="2">
+                <input type="hidden" name="name" value="T-shirt">
+                <input type="hidden" name="price" value="500">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Jeans</td>
+        <td>1300</td>
+        <td>
+            <form action="ShoppingServlet" method="post">
+                <input type="hidden" name="id" value="3">
+                <input type="hidden" name="name" value="Jeans">
+                <input type="hidden" name="price" value="1300">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+<br>
+<a href="cart.jsp"><h3>Go to Cart</h3></a>
+
+</body>
+</html>
